@@ -11,6 +11,8 @@ interface User {
  * firstName and lastName properties of User?
  */
 
+/* In this case Omit makes more sense than Pick
+because we only have to omit 1 element instead of picking 2 */
 type MyType = Omit<User, "id">;
 
 type tests = [Expect<Equal<MyType, { firstName: string; lastName: string }>>];
